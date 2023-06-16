@@ -1,7 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+/* builder.Services.AddTransient<IDoctorAvailbilityRepository, DoctorAvailabilityInMemory>();
+builder.Services.AddTransient<IDoctorsService, DoctorsService>(); */
 
 var app = builder.Build();
 
