@@ -34,10 +34,11 @@ namespace DoctorsAppointment.Services
 
             // create new availability
             var doctorAvailability = new DoctorAvailability 
-            { 
-                DoctorName = doctorName, 
-                DoctorId = Guid.NewGuid(),
+            {
+                Id = Guid.NewGuid(),
                 Date = DateTime.Now,
+                DoctorId = Guid.NewGuid(),
+                DoctorName = doctorName, 
                 IsReserved = isReserved,
                 Cost = cost
             };
