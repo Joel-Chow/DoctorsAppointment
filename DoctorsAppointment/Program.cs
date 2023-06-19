@@ -1,8 +1,9 @@
+using DoctorsAppointment.Repositories;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-/* builder.Services.AddTransient<IDoctorAvailbilityRepository, DoctorAvailabilityInMemory>();
-builder.Services.AddTransient<IDoctorsService, DoctorsService>(); */
+builder.Services.AddTransient<IDoctorsAvailabilityRepo, CatetgoryInMemoryRepo>();
 
 var app = builder.Build();
 

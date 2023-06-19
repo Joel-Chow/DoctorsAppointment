@@ -3,12 +3,10 @@
 namespace DoctorsAppointment.Services
 {
     [Serializable]
-    internal class DoctorNameException : Exception
+    internal class DoctorNameEmptyException : Exception
     {
-
-        public DoctorNameException() : base("Doctor's Name should be filled in..")
+        public DoctorNameEmptyException() : base("Doctor name should not be null")
         {
         }
-
     }
 }

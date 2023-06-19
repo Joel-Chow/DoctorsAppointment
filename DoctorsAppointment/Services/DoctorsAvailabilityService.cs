@@ -1,32 +1,33 @@
-﻿using DoctorsAppointment.Entities;
+﻿using System;
+using DoctorsAppointment.Services;
+using DoctorsAppointment.Entities;
 using DoctorsAppointment.Repositories;
 
 namespace DoctorsAppointment.Services
 {
     public class DoctorsAvailabilityService : IDoctorsAvailabilityService
     {
-        private readonly IDoctorsAvailabilityRepository _doctorRepository;
-        public DoctorsAvailabilityService(IDoctorsAvailabilityRepository doctorRepository)
+        private readonly IDoctorsAvailabilityRepo _doctorAvailabilityRepo;
+        public DoctorsAvailabilityService(IDoctorsAvailabilityRepo doctorAvailabilityRepo)
         {
-            _doctorRepository = doctorRepository;
+            _doctorAvailabilityRepo = doctorAvailabilityRepo;
         }
-        public async Task Create(DoctorsAvailability doctorsAvailability)
+
+        public async Task Create(DoctorAvailability slot)
         {
-            // check doctor name is unique
-            if (string.IsNullOrEmpty(doctorsAvailability.DoctorName))
+            // check if the name is not empty
+            if (string.IsNullOrEmpty(slot.DoctorName))
             {
-                throw new DoctorNameException();
+                throw new DoctorNameEmptyException();
             }
 
-
-            // check doctor name is not empty
-            var exists = _doctorRepository.DoctorsAvailabilityExists(doctorsAvailability.DoctorName)
-            if(exists)
+            // make sure the slot is not available 
+            var exists = _doctorAvailabilityRepo.SlotExist(slot.Date);
+            if (exists)
             {
-                throw new DoctorNameExistsException(doctorsAvailability.DoctorName);
+                throw new SlotAlreadyExistsException(slot.Date);
             }
-
-            await _doctorRepository.Add(doctorsAvailability);
+            await _doctorAvailabilityRepo.Add(slot);
         }
     }
 }

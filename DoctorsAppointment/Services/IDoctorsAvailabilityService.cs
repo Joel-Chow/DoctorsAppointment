@@ -1,7 +1,10 @@
-﻿namespace DoctorsAppointment.Repositories
+﻿using System;
+using DoctorsAppointment.Entities;
+
+namespace DoctorsAppointment.Services
 {
-    public interface IDoctorsAvailabilityRepository
+    public interface IDoctorsAvailabilityService
     {
-        public bool DoctorsAvailabilityExist(string name);
+        public Task Create(DoctorAvailability slot);
     }
 }

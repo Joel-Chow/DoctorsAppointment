@@ -1,14 +1,12 @@
-﻿using Microsoft.Extensions.Hosting;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿using System;
 
 namespace DoctorsAppointment.Entities
 {
-    public class DoctorsAvailability
+    public class DoctorAvailability
     {
-        public Guid Id { get; set; }
-        public DateTime Time { get; set; }
+        public string? DoctorName { get; set; }
         public Guid DoctorId { get; set; }
-        public string DoctorName { get; set; }
+        public DateTime Date { get; set; }
         public bool IsReserved { get; set; }
         public decimal Cost { get; set; }
     }
