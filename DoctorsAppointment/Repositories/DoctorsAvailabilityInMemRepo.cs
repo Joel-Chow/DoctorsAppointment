@@ -11,9 +11,9 @@ public class CatetgoryInMemoryRepo : IDoctorsAvailabilityRepo
         _doctorAvailability.Add(doctorAvailability);
     }
 
-    public bool SlotExist(bool isReserved)
+    /*public bool SlotExist(bool isReserved)
     {
         return _doctorAvailability.Any(x => x.IsReserved == true);
-    }
+    }*/
 }
 

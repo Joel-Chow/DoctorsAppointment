@@ -7,6 +7,7 @@ namespace DoctorsAppointment.Services
     {
         public Task Create(
             string doctorName,
+            string date,
             bool isReserved,
             decimal cost
             );

@@ -15,6 +15,7 @@ namespace DoctorsAppointment.Services
 
         public async Task Create(
             string doctorName,
+            string date,
             bool isReserved,
             decimal cost
             )
@@ -26,17 +27,20 @@ namespace DoctorsAppointment.Services
             }
 
             // make sure the slot is not available 
-            var exists = _doctorAvailabilityRepo.SlotExist(isReserved);
+            /*var exists = _doctorAvailabilityRepo.SlotExist(isReserved);
             if (exists)
             {
                 throw new SlotAlreadyExistsException(isReserved);
-            }
+            }*/
 
             // create new availability
+
+            var datetime = DateTime.Parse(date);
+
             var doctorAvailability = new DoctorAvailability 
             {
                 Id = Guid.NewGuid(),
-                Date = DateTime.Now,
+                Date = datetime,
                 DoctorId = Guid.NewGuid(),
                 DoctorName = doctorName, 
                 IsReserved = isReserved,

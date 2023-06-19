@@ -15,8 +15,19 @@ namespace DoctorsAppointment.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] CreateDoctorsAvailability request)
         {
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values
+                    .SelectMany(value => value.Errors)
+                    .Select(error => error.ErrorMessage)
+                    .ToList();
+                return BadRequest(errors);
+            }
+
             await _doctorsAvailabilityService.Create(
                 request.DoctorName,
+                request.Date,
                 request.IsReserved,
                 request.Cost
                 );
