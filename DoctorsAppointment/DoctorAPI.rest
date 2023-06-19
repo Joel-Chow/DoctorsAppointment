@@ -5,10 +5,9 @@ POST {{url}}/doctorsavailabilities
 Content-Type: application/json
 
 {
-    "doctorName":"Test",
-    "slotTime": default(DateTime),
+    "doctorName":"Test2",
     "isReserved": false,
-    "cost": 1.50
+    "cost": 1.40
 }
 
 ###

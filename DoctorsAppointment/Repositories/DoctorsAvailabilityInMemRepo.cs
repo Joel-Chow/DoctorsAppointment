@@ -13,7 +13,7 @@ public class CatetgoryInMemoryRepo : IDoctorsAvailabilityRepo
 
     public bool SlotExist(bool isReserved)
     {
-        return _doctorAvailability.Any(x => x.IsReserved == isReserved);
+        return _doctorAvailability.Any(x => x.IsReserved == true);
     }
 }
 

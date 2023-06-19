@@ -7,8 +7,6 @@ namespace DoctorsAppointment.Services
     {
         public Task Create(
             string doctorName,
-            /* Guid doctorId, */
-            string slotTime,
             bool isReserved,
             decimal cost
             );

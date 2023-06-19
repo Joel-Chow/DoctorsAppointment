@@ -17,7 +17,6 @@ namespace DoctorsAppointment.Controllers
         {
             await _doctorsAvailabilityService.Create(
                 request.DoctorName,
-                request.Date,
                 request.IsReserved,
                 request.Cost
                 );

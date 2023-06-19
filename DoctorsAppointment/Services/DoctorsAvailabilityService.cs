@@ -15,8 +15,6 @@ namespace DoctorsAppointment.Services
 
         public async Task Create(
             string doctorName,
-            /* Guid doctorId,*/
-            string slotTime,
             bool isReserved,
             decimal cost
             )
@@ -39,7 +37,7 @@ namespace DoctorsAppointment.Services
             { 
                 DoctorName = doctorName, 
                 DoctorId = Guid.NewGuid(),
-                Date = slotTime,
+                Date = DateTime.Now,
                 IsReserved = isReserved,
                 Cost = cost
             };
