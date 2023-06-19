@@ -6,14 +6,14 @@ public class CatetgoryInMemoryRepo : IDoctorsAvailabilityRepo
 {
     private static List<DoctorAvailability> _doctorAvailability = new List<DoctorAvailability>();
 
-    public async Task Add(DoctorAvailability slot)
+    public async Task Add(DoctorAvailability doctorAvailability)
     {
-        _doctorAvailability.Add(slot);
+        _doctorAvailability.Add(doctorAvailability);
     }
 
-    public bool SlotExist(DateTime date)
+    public bool SlotExist(bool isReserved)
     {
-        return _doctorAvailability.Any(x => x.Date == date);
+        return _doctorAvailability.Any(x => x.IsReserved == isReserved);
     }
 }
 

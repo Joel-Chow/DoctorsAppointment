@@ -5,6 +5,12 @@ namespace DoctorsAppointment.Services
 {
     public interface IDoctorsAvailabilityService
     {
-        public Task Create(DoctorAvailability slot);
+        public Task Create(
+            string doctorName,
+            /* Guid doctorId, */
+            string slotTime,
+            bool isReserved,
+            decimal cost
+            );
     }
 }

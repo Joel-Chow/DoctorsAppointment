@@ -1,4 +1,21 @@
 ﻿@url = http://localhost:5248
 
 ###
-POST {{url}}/
+POST {{url}}/doctorsavailabilities
+Content-Type: application/json
+
+{
+    "doctorName":"Test",
+    "slotTime": default(DateTime),
+    "isReserved": false,
+    "cost": 1.50
+}
+
+###
+{
+    "DoctorName":"Test",
+    "DoctorId": "",
+    "Date":"Today",
+    "IsReserved": true,
+    "Cost":1.00
+}

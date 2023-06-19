@@ -1,13 +1,11 @@
-﻿using System;
-
-namespace DoctorsAppointment.Entities
+﻿namespace DoctorsAppointment.Controllers.Dtos
 {
-    public class DoctorAvailability
+    public class CreateDoctorsAvailability
     {
         public string? DoctorName { get; set; }
-        public Guid DoctorId { get; set; }
         public string? Date { get; set; }
         public bool IsReserved { get; set; }
         public decimal Cost { get; set; }
+
     }
 }

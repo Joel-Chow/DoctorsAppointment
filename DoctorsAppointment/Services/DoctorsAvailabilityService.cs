@@ -13,21 +13,39 @@ namespace DoctorsAppointment.Services
             _doctorAvailabilityRepo = doctorAvailabilityRepo;
         }
 
-        public async Task Create(DoctorAvailability slot)
+        public async Task Create(
+            string doctorName,
+            /* Guid doctorId,*/
+            string slotTime,
+            bool isReserved,
+            decimal cost
+            )
         {
             // check if the name is not empty
-            if (string.IsNullOrEmpty(slot.DoctorName))
+            if (string.IsNullOrEmpty(doctorName))
             {
                 throw new DoctorNameEmptyException();
             }
 
             // make sure the slot is not available 
-            var exists = _doctorAvailabilityRepo.SlotExist(slot.Date);
+            var exists = _doctorAvailabilityRepo.SlotExist(isReserved);
             if (exists)
             {
-                throw new SlotAlreadyExistsException(slot.Date);
+                throw new SlotAlreadyExistsException(isReserved);
             }
-            await _doctorAvailabilityRepo.Add(slot);
+
+            // create new availability
+            var doctorAvailability = new DoctorAvailability 
+            { 
+                DoctorName = doctorName, 
+                DoctorId = Guid.NewGuid(),
+                Date = slotTime,
+                IsReserved = isReserved,
+                Cost = cost
+            };
+
+            // add doctor availability with parameters
+            await _doctorAvailabilityRepo.Add(doctorAvailability);
         }
     }
 }

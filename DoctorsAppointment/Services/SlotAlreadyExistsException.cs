@@ -4,7 +4,7 @@ namespace DoctorsAppointment.Services
     [Serializable]
     internal class SlotAlreadyExistsException : Exception
     {
-        public SlotAlreadyExistsException(DateTime date) : base($"Slot with time {date} already exist!")
+        public SlotAlreadyExistsException(bool isReserved) : base($"Slot already exist!")
         {
         }
     }
