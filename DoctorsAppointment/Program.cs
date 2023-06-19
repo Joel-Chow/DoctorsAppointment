@@ -1,7 +1,10 @@
+using DoctorsAppointment.Database;
 using DoctorsAppointment.Repositories;
 using DoctorsAppointment.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddDoctorsAppointmentDb(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddTransient<IDoctorsAvailabilityRepo, CatetgoryInMemoryRepo>();
