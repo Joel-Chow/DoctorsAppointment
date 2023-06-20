@@ -23,7 +23,7 @@ namespace DoctorsAppointment.Repositories
         public async Task<List<string>> Check(Appointment appointment)
         {
             // returns list of free appointments
-            var freeSlots = await _database.DoctorAvailabilities.Where(x => x.IsReserved == true).ToListAsync();
+            var freeSlots = await _database.DoctorAvailabilities.Where(x => x.IsReserved == false).ToListAsync();
             List<string> freeDoctor = new List<string>();
             
             foreach(var freeSlot in freeSlots)
