@@ -13,9 +13,17 @@ namespace DoctorsAppointment.Services
 
         public async Task CreateAppointment(Appointment appointment)
         {
-            // check if datetime is free
+            // add ids
+            appointment.SlotId = Guid.NewGuid();
+            appointment.PaitentId = Guid.NewGuid();
 
             await _appointmentRepo.Add(appointment);
+        }
+
+        public async Task<List<string>> CheckAppointment(Appointment appointment)
+        {
+            // gets list of free appointments
+            return await _appointmentRepo.Check(appointment);
         }
     }
 }

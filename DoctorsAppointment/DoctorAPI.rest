@@ -1,14 +1,14 @@
-﻿@url = http://localhost:5434
+﻿@url = http://localhost:5248
 
 ###
 POST {{url}}/doctorsavailabilities
 Content-Type: application/json
 
 {
-    "doctorName":"Test",
-    "date": "22/02/2023 04:30 pm",
-    "isReserved": false,
-    "cost": 1.40
+    "DoctorName":"Test1",
+    "Date": "2023-02-22T06:30Z",
+    "IsReserved": false,
+    "Cost": 1.3
 }
 
 ###
@@ -16,9 +16,9 @@ POST {{url}}/appointments
 Content-Type: application/json
 
 {
-    "Id":"2f07dc6a-32fe-402c-85e9-16808a49b57c",
-    "SlotId":"7b87fd68-2613-49d4-a1d1-8f1714192fe7",
-    "PaitentId":"c5cf6641-8c11-484e-a07d-659971debef8",
     "PaitentName":"Test",
     "Date":"22/02/2023 04:30 pm"
 }
+
+###
+POST {{url}}/query

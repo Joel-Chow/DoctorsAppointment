@@ -8,8 +8,9 @@ namespace DoctorsAppointment.Database
     {
         public void Configure(EntityTypeBuilder<Appointment> builder)
         {
-            builder.ToTable("Appointments");
             builder.HasKey(x => x.Id);
+
+
         }
     }
 }

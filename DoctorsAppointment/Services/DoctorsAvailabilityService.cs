@@ -17,6 +17,7 @@ namespace DoctorsAppointment.Services
         public async Task Create(DoctorAvailability availability)
 
         {
+            // check if doctorName input is not null
             if (availability.DoctorName == "")
             {
                 throw new DoctorNameEmptyException();
