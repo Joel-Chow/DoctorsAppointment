@@ -1,4 +1,5 @@
 ﻿using System;
+using DoctorsAppointment.Services.Exceptions;
 using DoctorsAppointment.Services;
 using DoctorsAppointment.Entities;
 using DoctorsAppointment.Repositories;
@@ -13,42 +14,27 @@ namespace DoctorsAppointment.Services
             _doctorAvailabilityRepo = doctorAvailabilityRepo;
         }
 
-        public async Task Create(
-            string doctorName,
-            string date,
-            bool isReserved,
-            decimal cost
-            )
+        public async Task Create(DoctorAvailability availability)
+
         {
-            // check if the name is not empty
-            if (string.IsNullOrEmpty(doctorName))
+            if (availability.DoctorName == "")
             {
                 throw new DoctorNameEmptyException();
             }
 
-            // make sure the slot is not available 
-            /*var exists = _doctorAvailabilityRepo.SlotExist(isReserved);
-            if (exists)
+            // change datetime configurations
+            availability.Date = Convert.ToDateTime(availability.Date);
+
+            // create new Guid
+            availability.DoctorId = Guid.NewGuid();
+
+            if (availability.Cost < 0)
             {
-                throw new SlotAlreadyExistsException(isReserved);
-            }*/
-
-            // create new availability
-
-            var datetime = DateTime.Parse(date);
-
-            var doctorAvailability = new DoctorAvailability 
-            {
-                Id = Guid.NewGuid(),
-                Date = datetime,
-                DoctorId = Guid.NewGuid(),
-                DoctorName = doctorName, 
-                IsReserved = isReserved,
-                Cost = cost
-            };
+                throw new NegativeCostException();
+            }
 
             // add doctor availability with parameters
-            await _doctorAvailabilityRepo.Add(doctorAvailability);
+            await _doctorAvailabilityRepo.Add(availability);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using DoctorsAppointment.Controllers.Dtos;
+﻿using System;
+using DoctorsAppointment.Entities;
 using DoctorsAppointment.Services;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,7 +14,7 @@ namespace DoctorsAppointment.Controllers
             _doctorsAvailabilityService = doctorsAvailabilityService;
         }
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] CreateDoctorsAvailability request)
+        public async Task<IActionResult> Post([FromBody] DoctorAvailability availability)
         {
 
             if (!ModelState.IsValid)
@@ -25,12 +26,7 @@ namespace DoctorsAppointment.Controllers
                 return BadRequest(errors);
             }
 
-            await _doctorsAvailabilityService.Create(
-                request.DoctorName,
-                request.Date,
-                request.IsReserved,
-                request.Cost
-                );
+            await _doctorsAvailabilityService.Create(availability);
 
             return Ok("Slot Created!");
         }
