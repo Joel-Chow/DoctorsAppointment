@@ -8,5 +8,7 @@ namespace DoctorsAppointment.Repositories
     {
         /*public bool SlotExist(bool isReserved);*/
         public Task Add(DoctorAvailability doctorAvailability);
+
+        Task<IEnumerable<object>> Check(string? doctorName);
     }
 }

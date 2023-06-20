@@ -12,6 +12,14 @@ Content-Type: application/json
 }
 
 ###
+POST {{url}}/schedule
+Content-Type: application/json
+
+{
+    "DoctorName":"Test1"
+}
+
+###
 POST {{url}}/appointments
 Content-Type: application/json
 

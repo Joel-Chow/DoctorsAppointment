@@ -37,5 +37,11 @@ namespace DoctorsAppointment.Services
             // add doctor availability with parameters
             await _doctorAvailabilityRepo.Add(availability);
         }
+
+        public async Task<IEnumerable<object>> CheckAppointment(string? doctorName)
+        {
+            // gets list of free appointments
+            return await _doctorAvailabilityRepo.Check(doctorName);
+        }
     }
 }

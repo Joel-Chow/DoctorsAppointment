@@ -6,5 +6,7 @@ namespace DoctorsAppointment.Services
     public interface IDoctorsAvailabilityService
     {
         public Task Create(DoctorAvailability availability);
+
+        public Task<IEnumerable<object>> CheckAppointment(string? doctorName);
     }
 }
