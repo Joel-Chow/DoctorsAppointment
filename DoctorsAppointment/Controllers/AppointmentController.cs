@@ -30,7 +30,7 @@ public class AppointmentController : ControllerBase
         return Ok("Appointment Booked!");
     }
 
-    
+    [Route("/query")]
     public async Task<IActionResult> GetAction(Appointment appointment)
     {
         var message = "Here are the free appointments!\n";
