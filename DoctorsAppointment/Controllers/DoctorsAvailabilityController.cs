@@ -14,7 +14,7 @@ namespace DoctorsAppointment.Controllers
             _doctorsAvailabilityService = doctorsAvailabilityService;
         }
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] DoctorAvailability availability)
+        public async Task<IActionResult> Post([FromBody] Slot slot)
         {
 
             if (!ModelState.IsValid)
@@ -26,12 +26,12 @@ namespace DoctorsAppointment.Controllers
                 return BadRequest(errors);
             }
 
-            await _doctorsAvailabilityService.Create(availability);
+            await _doctorsAvailabilityService.Create(slot);
 
             return Ok("Slot Created!");
         }
         [Route("/schedule")]
-        public async Task<IActionResult> GetAction([FromBody] DoctorAvailability availability)
+        public async Task<IActionResult> GetAction([FromBody] Slot slot)
         {
 
             if (!ModelState.IsValid)
@@ -44,7 +44,7 @@ namespace DoctorsAppointment.Controllers
             }
 
             var message = "Hi Doctor! Here are your appointments!\n";
-            var results = await _doctorsAvailabilityService.CheckAppointment(availability.DoctorName);
+            var results = await _doctorsAvailabilityService.CheckAppointment(slot.DoctorName);
             foreach (var result in results)
             {
                 message = message + result + "\n";

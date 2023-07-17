@@ -2,7 +2,7 @@
 
 namespace DoctorsAppointment.Entities
 {
-    public class DoctorAvailability
+    public class Slot
     {
         public Guid Id { get; set; }
         public DateTime Date { get; set; }

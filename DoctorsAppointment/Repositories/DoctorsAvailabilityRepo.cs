@@ -11,9 +11,9 @@ namespace DoctorsAppointment.Repositories
         {
             _database = database;
         }
-        async Task IDoctorsAvailabilityRepo.Add(DoctorAvailability doctorAvailability)
+        async Task IDoctorsAvailabilityRepo.Add(Slot slot)
         {
-            _database.Add(doctorAvailability);
+            _database.Add(slot);
             await _database.SaveChangesAsync();
         }
 

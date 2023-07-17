@@ -6,8 +6,7 @@ namespace DoctorsAppointment.Repositories
 {
     public interface IDoctorsAvailabilityRepo
     {
-        /*public bool SlotExist(bool isReserved);*/
-        public Task Add(DoctorAvailability doctorAvailability);
+        public Task Add(Slot slot);
 
         Task<IEnumerable<object>> Check(string? doctorName);
     }

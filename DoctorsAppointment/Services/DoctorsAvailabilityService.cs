@@ -14,7 +14,7 @@ namespace DoctorsAppointment.Services
             _doctorAvailabilityRepo = doctorAvailabilityRepo;
         }
 
-        public async Task Create(DoctorAvailability availability)
+        public async Task Create(Slot slot)
 
         {
             // check if doctorName input is not null
