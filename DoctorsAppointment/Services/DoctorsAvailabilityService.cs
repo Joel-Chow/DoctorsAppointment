@@ -18,24 +18,24 @@ namespace DoctorsAppointment.Services
 
         {
             // check if doctorName input is not null
-            if (availability.DoctorName == "")
+            if (slot.DoctorName == "")
             {
                 throw new DoctorNameEmptyException();
             }
 
             // change datetime configurations
-            availability.Date = Convert.ToDateTime(availability.Date);
+            slot.Date = Convert.ToDateTime(slot.Date);
 
             // create new Guid
-            availability.DoctorId = Guid.NewGuid();
+            slot.DoctorId = Guid.NewGuid();
 
-            if (availability.Cost < 0)
+            if (slot.Cost < 0)
             {
                 throw new NegativeCostException();
             }
 
             // add doctor availability with parameters
-            await _doctorAvailabilityRepo.Add(availability);
+            await _doctorAvailabilityRepo.Add(slot);
         }
 
         public async Task<IEnumerable<object>> CheckAppointment(string? doctorName)

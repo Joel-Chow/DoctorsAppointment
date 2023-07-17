@@ -29,3 +29,14 @@ C:\Users\chowkh\Source\Repos\DoctorsAppointment\DoctorsAppointment\obj\Debug\net
 C:\Users\chowkh\Source\Repos\DoctorsAppointment\DoctorsAppointment\obj\Debug\net7.0\DoctorsAppointment.pdb
 C:\Users\chowkh\Source\Repos\DoctorsAppointment\DoctorsAppointment\obj\Debug\net7.0\DoctorsAppointment.genruntimeconfig.cache
 C:\Users\chowkh\Source\Repos\DoctorsAppointment\DoctorsAppointment\obj\Debug\net7.0\ref\DoctorsAppointment.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\Npgsql.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\obj\Debug\net7.0\DoctorsAppointment.csproj.CopyComplete
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\Humanizer.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\Microsoft.Extensions.DependencyModel.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\Mono.TextTemplating.dll
+C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment\bin\Debug\net7.0\System.CodeDom.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\chowkh\\Source\\Repos\\DoctorsAppointment\\DoctorsAppointment\\DoctorsAppointment.csproj": {}
+    "C:\\Users\\chowkh\\source\\repos\\DoctorsAppointment\\DoctorsAppointment\\DoctorsAppointment.csproj": {}
   },
   "projects": {
-    "C:\\Users\\chowkh\\Source\\Repos\\DoctorsAppointment\\DoctorsAppointment\\DoctorsAppointment.csproj": {
+    "C:\\Users\\chowkh\\source\\repos\\DoctorsAppointment\\DoctorsAppointment\\DoctorsAppointment.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\chowkh\\Source\\Repos\\DoctorsAppointment\\DoctorsAppointment\\DoctorsAppointment.csproj",
+        "projectUniqueName": "C:\\Users\\chowkh\\source\\repos\\DoctorsAppointment\\DoctorsAppointment\\DoctorsAppointment.csproj",
         "projectName": "DoctorsAppointment",
-        "projectPath": "C:\\Users\\chowkh\\Source\\Repos\\DoctorsAppointment\\DoctorsAppointment\\DoctorsAppointment.csproj",
+        "projectPath": "C:\\Users\\chowkh\\source\\repos\\DoctorsAppointment\\DoctorsAppointment\\DoctorsAppointment.csproj",
         "packagesPath": "C:\\Users\\chowkh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\chowkh\\Source\\Repos\\DoctorsAppointment\\DoctorsAppointment\\obj\\",
+        "outputPath": "C:\\Users\\chowkh\\source\\repos\\DoctorsAppointment\\DoctorsAppointment\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chowkh\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -40,6 +40,26 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[7.0.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
