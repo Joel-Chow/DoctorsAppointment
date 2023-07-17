@@ -5,8 +5,8 @@ namespace DoctorsAppointment.Repositories
 {
     public interface IAppointmentRepo
     {
-        public Task Add(Appointment appointment);
+        public Task Add(PaitentBooking appointment);
 
-        public Task<List<string>> Check(Appointment appointment);
+        public Task<List<string>> Check(PaitentBooking appointment);
     }
 }

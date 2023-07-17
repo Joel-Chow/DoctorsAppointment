@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DoctorsAppointment.Database
 {
-    public class AppointmentConfigurations : IEntityTypeConfiguration<Appointment>
+    public class AppointmentConfigurations : IEntityTypeConfiguration<PaitentBooking>
     {
-        public void Configure(EntityTypeBuilder<Appointment> builder)
+        public void Configure(EntityTypeBuilder<PaitentBooking> builder)
         {
             builder.HasKey(x => x.Id);
 

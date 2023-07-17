@@ -11,7 +11,7 @@ namespace DoctorsAppointment.Services
             _appointmentRepo = appointmentRepo;
         }
 
-        public async Task CreateAppointment(Appointment appointment)
+        public async Task CreateAppointment(PaitentBooking appointment)
         {
             // add ids
             appointment.SlotId = Guid.NewGuid();
@@ -20,7 +20,7 @@ namespace DoctorsAppointment.Services
             await _appointmentRepo.Add(appointment);
         }
 
-        public async Task<List<string>> CheckAppointment(Appointment appointment)
+        public async Task<List<string>> CheckAppointment(PaitentBooking appointment)
         {
             // gets list of free appointments
             return await _appointmentRepo.Check(appointment);

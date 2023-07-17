@@ -2,7 +2,7 @@
 
 namespace DoctorsAppointment.Entities
 {
-    public class Appointment
+    public class PaitentBooking
     {
         public Guid Id { get; set; }
         public Guid SlotId { get; set; }

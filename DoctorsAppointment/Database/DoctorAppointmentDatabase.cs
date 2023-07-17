@@ -6,7 +6,7 @@ namespace DoctorsAppointment.Database
     public class DoctorAppointmentDatabase: DbContext
     {
         public DbSet<DoctorAvailability> DoctorAvailabilities { get; set; }
-        public DbSet<Appointment> Appointments { get; set; }
+        public DbSet<PaitentBooking> PaitentBooking { get; set; }
 
         public DoctorAppointmentDatabase(DbContextOptions<DoctorAppointmentDatabase> options) : base(options)
         {

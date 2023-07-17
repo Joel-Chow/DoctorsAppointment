@@ -45,7 +45,7 @@ namespace DoctorsAppointment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Appointments", "Doctors_Appointment_Db");
+                    b.ToTable("PaitentBooking", "Doctors_Appointment_Db");
                 });
 
             modelBuilder.Entity("DoctorsAppointment.Entities.DoctorAvailability", b =>

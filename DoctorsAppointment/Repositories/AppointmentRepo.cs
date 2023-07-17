@@ -14,13 +14,13 @@ namespace DoctorsAppointment.Repositories
         {
             _database = database;
         }
-        public async Task Add(Appointment appointment)
+        public async Task Add(PaitentBooking appointment)
         {
             _database.Add(appointment);
             await _database.SaveChangesAsync();
         }
 
-        public async Task<List<string>> Check(Appointment appointment)
+        public async Task<List<string>> Check(PaitentBooking appointment)
         {
             // returns list of free appointments
             var freeSlots = await _database.DoctorAvailabilities.Where(x => x.IsReserved == false).ToListAsync();

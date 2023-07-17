@@ -15,7 +15,7 @@ namespace DoctorsAppointment.Migrations
                 name: "Doctors_Appointment_Db");
 
             migrationBuilder.CreateTable(
-                name: "Appointments",
+                name: "PaitentBooking",
                 schema: "Doctors_Appointment_Db",
                 columns: table => new
                 {
@@ -52,7 +52,7 @@ namespace DoctorsAppointment.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Appointments",
+                name: "PaitentBooking",
                 schema: "Doctors_Appointment_Db");
 
             migrationBuilder.DropTable(

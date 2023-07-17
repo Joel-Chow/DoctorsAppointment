@@ -14,7 +14,7 @@ public class AppointmentController : ControllerBase
         _appointmentService = appointmentService;
     }
     
-    public async Task<IActionResult> Post([FromBody] Appointment appointment) 
+    public async Task<IActionResult> Post([FromBody] PaitentBooking appointment) 
     {
 
         if (!ModelState.IsValid)
@@ -31,7 +31,7 @@ public class AppointmentController : ControllerBase
     }
 
     [Route("/query")]
-    public async Task<IActionResult> GetAction(Appointment appointment)
+    public async Task<IActionResult> GetAction(PaitentBooking appointment)
     {
         var message = "Here are the free appointments!\n";
         var results = await _appointmentService.CheckAppointment(appointment);
