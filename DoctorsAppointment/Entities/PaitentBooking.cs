@@ -8,7 +8,8 @@ namespace DoctorsAppointment.Entities
         public Guid SlotId { get; set; }
         public Guid PaitentId { get; set; }
         public string PaitentName { get; set; }
-        public string Date { get; set; }
+        [Required]
+        public string? Date { get; set; }
     }
 }
 
