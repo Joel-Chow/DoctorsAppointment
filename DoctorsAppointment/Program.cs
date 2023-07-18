@@ -17,7 +17,12 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Doctor's Appointment Scheduling");
-app.MapControllers();
+// app.MapGet("/", () => "Doctor's Appointment Scheduling"); 
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "doctors/slots/{doctorId}");
+
+// app.MapControllers();
 
 app.Run();

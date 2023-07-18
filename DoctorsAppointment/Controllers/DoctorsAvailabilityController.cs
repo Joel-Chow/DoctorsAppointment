@@ -2,10 +2,11 @@
 using DoctorsAppointment.Entities;
 using DoctorsAppointment.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace DoctorsAppointment.Controllers
 {
-    [Route("/doctorsavailabilities")]
+    [Route("/slots/{doctorId}")]
     public class DoctorsAvailabilityController : ControllerBase
     {
         private readonly IDoctorsAvailabilityService _doctorsAvailabilityService;
@@ -13,8 +14,9 @@ namespace DoctorsAppointment.Controllers
         {
             _doctorsAvailabilityService = doctorsAvailabilityService;
         }
+
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Slot slot)
+        public async Task<IActionResult> Post([FromBody] Slot slot, string doctorId)
         {
 
             if (!ModelState.IsValid)
@@ -25,13 +27,16 @@ namespace DoctorsAppointment.Controllers
                     .ToList();
                 return BadRequest(errors);
             }
+
+            var requestId = doctorId;
 
             await _doctorsAvailabilityService.Create(slot);
 
             return Ok("Slot Created!");
         }
-        [Route("/schedule")]
-        public async Task<IActionResult> GetAction([FromBody] Slot slot)
+
+        [HttpGet]
+        public async Task<IActionResult> GetAction([FromBody] Slot slot, string doctorId)
         {
 
             if (!ModelState.IsValid)
@@ -43,14 +48,17 @@ namespace DoctorsAppointment.Controllers
                 return BadRequest(errors);
             }
 
+            var requestId = doctorId;
+
             var message = "Hi Doctor! Here are your appointments!\n";
             var results = await _doctorsAvailabilityService.CheckAppointment(slot.DoctorName);
             foreach (var result in results)
             {
-                message = message + result + "\n";
+                message = message + result + "\n" + requestId;
             }
 
             return Ok(message);
         }
     }
 }
+
