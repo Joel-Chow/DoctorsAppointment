@@ -27,7 +27,7 @@ namespace DoctorsAppointment.Services
             slot.Date = Convert.ToDateTime(slot.Date);
 
             // create new Guid
-            slot.DoctorId = Guid.NewGuid();
+            // slot.DoctorId = Guid.NewGuid();
 
             if (slot.Cost < 0)
             {

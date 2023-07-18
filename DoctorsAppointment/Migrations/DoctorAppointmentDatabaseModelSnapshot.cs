@@ -23,7 +23,7 @@ namespace DoctorsAppointment.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("DoctorsAppointment.Entities.Appointment", b =>
+            modelBuilder.Entity("DoctorsAppointment.Entities.PaitentBooking", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,7 +48,7 @@ namespace DoctorsAppointment.Migrations
                     b.ToTable("PaitentBooking", "Doctors_Appointment_Db");
                 });
 
-            modelBuilder.Entity("DoctorsAppointment.Entities.DoctorAvailability", b =>
+            modelBuilder.Entity("DoctorsAppointment.Entities.Slot", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -60,8 +60,9 @@ namespace DoctorsAppointment.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("DoctorId")
-                        .HasColumnType("uuid");
+                    b.Property<string>("DoctorId")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("DoctorName")
                         .HasColumnType("text");

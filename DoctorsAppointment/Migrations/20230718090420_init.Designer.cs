@@ -12,7 +12,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace DoctorsAppointment.Migrations
 {
     [DbContext(typeof(DoctorAppointmentDatabase))]
-    [Migration("20230619081211_init")]
+    [Migration("20230718090420_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -26,7 +26,7 @@ namespace DoctorsAppointment.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("DoctorsAppointment.Entities.Appointment", b =>
+            modelBuilder.Entity("DoctorsAppointment.Entities.PaitentBooking", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -48,10 +48,10 @@ namespace DoctorsAppointment.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Appointments", "Doctors_Appointment_Db");
+                    b.ToTable("PaitentBooking", "Doctors_Appointment_Db");
                 });
 
-            modelBuilder.Entity("DoctorsAppointment.Entities.DoctorAvailability", b =>
+            modelBuilder.Entity("DoctorsAppointment.Entities.Slot", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -63,8 +63,9 @@ namespace DoctorsAppointment.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("DoctorId")
-                        .HasColumnType("uuid");
+                    b.Property<string>("DoctorId")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("DoctorName")
                         .HasColumnType("text");
