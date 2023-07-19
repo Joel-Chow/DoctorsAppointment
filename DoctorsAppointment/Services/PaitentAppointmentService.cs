@@ -13,7 +13,7 @@ namespace DoctorsAppointment.Services
             _logger = logger;
         }
 
-        public async Task CreateAppointment(PaitentBooking appointment)
+        public async Task CreateAppointment(PaitentBooking appointment, string doctorId)
         {
             // add ids
             appointment.SlotId = Guid.NewGuid();
@@ -22,7 +22,9 @@ namespace DoctorsAppointment.Services
             await _appointmentRepo.Add(appointment);
             _logger.LogInformation(
                 "Appointment has been made with the following details:\n" +
-                appointment);
+                $"\tPaitent Name: {appointment.PaitentName}\n" +
+                $"\tAppointment Time: {appointment.Date}\n" +
+                $"\tDoctor ID: {doctorId}\n");
         }
 
         public async Task<List<string>> CheckAppointment(string requestId)

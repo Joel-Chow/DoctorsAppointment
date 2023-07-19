@@ -30,7 +30,7 @@ namespace DoctorsAppointment.Controllers
 
             var requestId = doctorId;
 
-            await _appointmentService.CreateAppointment(appointment);
+            await _appointmentService.CreateAppointment(appointment, doctorId);
             return Ok("Appointment Booked!");
         }
 

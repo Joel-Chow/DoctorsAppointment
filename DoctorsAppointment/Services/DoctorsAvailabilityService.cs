@@ -40,6 +40,8 @@ namespace DoctorsAppointment.Services
 
             // add doctor availability with parameters
             await _doctorAvailabilityRepo.Add(slot);
+
+            _logger.LogInformation("Slot has been created");
         }
 
         public async Task<IEnumerable<object>> CheckAppointment(string requestId)
