@@ -9,9 +9,11 @@ namespace DoctorsAppointment.Controllers
     public class DoctorsAvailabilityController : ControllerBase
     {
         private readonly IDoctorsAvailabilityService _doctorsAvailabilityService;
-        public DoctorsAvailabilityController(IDoctorsAvailabilityService doctorsAvailabilityService)
+        private readonly ILogger<DoctorsAvailabilityController> _logger;
+        public DoctorsAvailabilityController(IDoctorsAvailabilityService doctorsAvailabilityService, ILogger<DoctorsAvailabilityController> logger)
         {
             _doctorsAvailabilityService = doctorsAvailabilityService;
+            _logger = logger;
         }
 
         [HttpPost]
@@ -39,6 +41,8 @@ namespace DoctorsAppointment.Controllers
         {
 
             var requestId = HttpContext.Request.Path;
+
+            _logger.LogInformation("Request received");
 
             var message = "Hi Doctor! Here are your free appointments!\n";
             var results = await _doctorsAvailabilityService.CheckAppointment(requestId);

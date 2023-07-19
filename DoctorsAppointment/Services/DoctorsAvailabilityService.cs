@@ -9,9 +9,11 @@ namespace DoctorsAppointment.Services
     public class DoctorsAvailabilityService : IDoctorsAvailabilityService
     {
         private readonly IDoctorsAvailabilityRepo _doctorAvailabilityRepo;
-        public DoctorsAvailabilityService(IDoctorsAvailabilityRepo doctorAvailabilityRepo)
+        private readonly ILogger<DoctorsAvailabilityService> _logger;
+        public DoctorsAvailabilityService(IDoctorsAvailabilityRepo doctorAvailabilityRepo, ILogger<DoctorsAvailabilityService> logger)
         {
             _doctorAvailabilityRepo = doctorAvailabilityRepo;
+            _logger = logger;
         }
 
         public async Task Create(Slot slot, string doctorId)
@@ -20,6 +22,7 @@ namespace DoctorsAppointment.Services
             // check if doctorName input is not null
             if (slot.DoctorName == "")
             {
+                _logger.LogError("Doctor has no name");
                 throw new DoctorNameEmptyException();
             }
 
@@ -31,6 +34,7 @@ namespace DoctorsAppointment.Services
 
             if (slot.Cost < 0)
             {
+                _logger.LogError("Input cost is negative");
                 throw new NegativeCostException();
             }
 
