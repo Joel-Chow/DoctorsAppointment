@@ -1,0 +1,41 @@
+﻿@url = http://localhost:5248
+
+###
+POST {{url}}/slots/test1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXciOiJhZG1pbiIsImV4cCI6MTY4OTc0OTM0NiwiaXNzIjoiRG9jdG9yc19BcHBvaW50bWVudCIsImF1ZCI6IkRvY3RvcnNfQXBwb2ludG1lbnQifQ.ptz-DV4knCrzEw1otaKugPDVVuimGAfybj_Brb0zi2g
+
+{
+    "DoctorName":"Test1",
+    "Date": "2023-02-22T06:30Z",
+    "IsReserved": true,
+    "Cost": 1.3
+}
+
+###
+GET {{url}}/slots/test1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXciOiJhZG1pbiIsImV4cCI6MTY4OTc0OTM0NiwiaXNzIjoiRG9jdG9yc19BcHBvaW50bWVudCIsImF1ZCI6IkRvY3RvcnNfQXBwb2ludG1lbnQifQ.ptz-DV4knCrzEw1otaKugPDVVuimGAfybj_Brb0zi2g
+
+
+###
+POST {{url}}/appointments/test1
+Content-Type: application/json
+
+{
+    "PaitentName":"Test",
+    "Date":"22/02/2023 04:30 pm"
+}
+
+###
+GET {{url}}/appointments/test1
+Content-Type: application/json
+
+
+###
+POST {{url}}/login
+Content-Type: application/json
+
+{
+    "UserName": "admin"
+}
