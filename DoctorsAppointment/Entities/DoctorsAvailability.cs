@@ -8,7 +8,7 @@ namespace DoctorsAppointment.Entities
         public Guid Id { get; set; }
         [Required]
         public DateTime Date { get; set; }
-        [Required]
+        
         public string? DoctorId { get; set; }
         public string? DoctorName { get; set; }
         [Required]

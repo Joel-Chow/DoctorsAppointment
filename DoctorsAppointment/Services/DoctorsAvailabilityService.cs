@@ -38,8 +38,12 @@ namespace DoctorsAppointment.Services
             await _doctorAvailabilityRepo.Add(slot);
         }
 
-        public async Task<IEnumerable<object>> CheckAppointment(string doctorId)
+        public async Task<IEnumerable<object>> CheckAppointment(string requestId)
         {
+
+            // remove strings ahead
+            var doctorId = requestId.Replace("/slots/", "");
+
             // gets list of free appointments
 
             // throw exception is doctorId does not exist

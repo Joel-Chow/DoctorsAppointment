@@ -25,17 +25,11 @@ namespace DoctorsAppointment.Repositories
 
             foreach (var freeSlot in freeSlots)
             {
-                var message = "Slot " + freeSlot.Date.ToString();
-                if (freeSlot.IsReserved == true)
+                var message = "\t" + freeSlot.Date.ToString();
+                if (freeSlot.IsReserved == false)
                 {
-                    message = message + " is reserved.";
+                    freeDoctor.Add(message);
                 }
-                else
-                {
-                    message = message + " is not reserved.";
-                }
-
-                freeDoctor.Add(message);
             }
 
             return freeDoctor;

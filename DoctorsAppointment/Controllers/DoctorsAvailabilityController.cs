@@ -17,7 +17,7 @@ namespace DoctorsAppointment.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Slot slot, string doctorId)
         {
-
+            
             if (!ModelState.IsValid)
             {
                 var errors = ModelState.Values
@@ -35,7 +35,7 @@ namespace DoctorsAppointment.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAction([FromBody] string doctorId)
+        public async Task<IActionResult> GetAction([FromBody] HttpContext content)
         {
 
             /*if (!ModelState.IsValid)
@@ -46,14 +46,13 @@ namespace DoctorsAppointment.Controllers
                     .ToList();
                 return BadRequest(errors);
             }*/
+            var requestId = HttpContext.Request.Path;
 
-            var requestId = doctorId;
-
-            var message = "Hi Doctor! Here are your appointments!\n";
-            var results = await _doctorsAvailabilityService.CheckAppointment(doctorId);
+            var message = "Hi Doctor! Here are your free appointments!\n";
+            var results = await _doctorsAvailabilityService.CheckAppointment(requestId);
             foreach (var result in results)
             {
-                message = message + result + "\n" + requestId;
+                message = message + result + "\n";
             }
 
             return Ok(message);
