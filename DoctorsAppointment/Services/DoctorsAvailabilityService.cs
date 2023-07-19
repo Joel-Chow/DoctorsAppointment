@@ -14,7 +14,7 @@ namespace DoctorsAppointment.Services
             _doctorAvailabilityRepo = doctorAvailabilityRepo;
         }
 
-        public async Task Create(Slot slot)
+        public async Task Create(Slot slot, string doctorId)
 
         {
             // check if doctorName input is not null
@@ -27,7 +27,7 @@ namespace DoctorsAppointment.Services
             slot.Date = Convert.ToDateTime(slot.Date);
 
             // create new Guid
-            // slot.DoctorId = Guid.NewGuid();
+            slot.DoctorId = doctorId;
 
             if (slot.Cost < 0)
             {
@@ -38,10 +38,13 @@ namespace DoctorsAppointment.Services
             await _doctorAvailabilityRepo.Add(slot);
         }
 
-        public async Task<IEnumerable<object>> CheckAppointment(string? doctorName)
+        public async Task<IEnumerable<object>> CheckAppointment(string doctorId)
         {
             // gets list of free appointments
-            return await _doctorAvailabilityRepo.Check(doctorName);
+
+            // throw exception is doctorId does not exist
+
+            return await _doctorAvailabilityRepo.Check(doctorId);
         }
     }
 }

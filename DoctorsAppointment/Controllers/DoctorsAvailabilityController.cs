@@ -2,7 +2,6 @@
 using DoctorsAppointment.Entities;
 using DoctorsAppointment.Services;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace DoctorsAppointment.Controllers
 {
@@ -30,28 +29,28 @@ namespace DoctorsAppointment.Controllers
 
             var requestId = doctorId;
 
-            await _doctorsAvailabilityService.Create(slot);
+            await _doctorsAvailabilityService.Create(slot, doctorId);
 
             return Ok("Slot Created!");
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAction([FromBody] Slot slot, string doctorId)
+        public async Task<IActionResult> GetAction([FromBody] string doctorId)
         {
 
-            if (!ModelState.IsValid)
+            /*if (!ModelState.IsValid)
             {
                 var errors = ModelState.Values
                     .SelectMany(value => value.Errors)
                     .Select(error => error.ErrorMessage)
                     .ToList();
                 return BadRequest(errors);
-            }
+            }*/
 
             var requestId = doctorId;
 
             var message = "Hi Doctor! Here are your appointments!\n";
-            var results = await _doctorsAvailabilityService.CheckAppointment(slot.DoctorName);
+            var results = await _doctorsAvailabilityService.CheckAppointment(doctorId);
             foreach (var result in results)
             {
                 message = message + result + "\n" + requestId;

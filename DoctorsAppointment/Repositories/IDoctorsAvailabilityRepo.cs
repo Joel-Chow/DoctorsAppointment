@@ -8,6 +8,6 @@ namespace DoctorsAppointment.Repositories
     {
         public Task Add(Slot slot);
 
-        Task<IEnumerable<object>> Check(string? doctorName);
+        Task<IEnumerable<object>> Check(string doctorId);
     }
 }

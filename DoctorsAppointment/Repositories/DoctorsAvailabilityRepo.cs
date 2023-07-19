@@ -17,10 +17,10 @@ namespace DoctorsAppointment.Repositories
             await _database.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<object>> Check(string? doctorName)
+        public async Task<IEnumerable<object>> Check(string doctorId)
         {
             // returns list of free appointments
-            var freeSlots = await _database.DoctorAvailabilities.Where(x => x.DoctorName == doctorName).ToListAsync();
+            var freeSlots = await _database.DoctorAvailabilities.Where(x => x.DoctorId == doctorId).ToListAsync();
             List<string> freeDoctor = new List<string>();
 
             foreach (var freeSlot in freeSlots)
