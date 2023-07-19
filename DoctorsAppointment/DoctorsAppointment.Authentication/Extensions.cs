@@ -7,7 +7,7 @@ namespace DoctorsAppointment.DoctorsAppointment.Authentication
     {
         public static IServiceCollection AddAuthenticationModule(this IServiceCollection services, IConfiguration configuration)
         {
-            services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName);
+            services.Configure<JwtOptions>(configuration.GetSection(JwtOptions.SectionName));
             services
                 .AddDoctorAppointmentAuthentication(configuration)
                 .AddTransient<JwtCreator>();
