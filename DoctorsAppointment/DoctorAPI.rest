@@ -1,9 +1,9 @@
 ﻿@url = http://localhost:5248
-@url2 = http://localhost:5248/doctors/
 
 ###
 POST {{url}}/slots/test1
 Content-Type: application/json
+Authorization: Bearer
 
 {
     "DoctorName":"Test1",
@@ -28,25 +28,12 @@ Content-Type: application/json
 
 ###
 GET {{url}}/appointments/test1
-Content-Type: application/json
-
+Content-Type: application/
 
 ###
-POST {{url}}/slots/ssd
+POST {{url}}/login
 Content-Type: application/json
 
 {
-    "DoctorId":"Test1"
-}
-
-###
-POST {{url2}}12345/doctorsavailabilities
-Content-Type: application/json
-
-{
-    "DoctorName":"Test1",
-    "Date": "2023-02-22T06:30Z",
-    "DoctorId": "1234",
-    "IsReserved": false,
-    "Cost": 1.3
+    "UserName": "admin"
 }
