@@ -1,6 +1,7 @@
 ﻿using System;
 using DoctorsAppointment.Entities;
 using DoctorsAppointment.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DoctorsAppointment.Controllers
@@ -17,6 +18,7 @@ namespace DoctorsAppointment.Controllers
         }
 
         [HttpPost]
+        [Authorize]
         public async Task<IActionResult> Post([FromBody] Slot slot, string doctorId)
         {
             
@@ -37,6 +39,7 @@ namespace DoctorsAppointment.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> GetAction([FromBody] HttpContext content)
         {
 

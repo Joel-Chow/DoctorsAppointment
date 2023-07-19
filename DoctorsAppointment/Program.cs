@@ -1,5 +1,6 @@
 using DoctorsAppointment.Database;
 using DoctorsAppointment.Repositories;
+using DoctorsAppointment.Security;
 using DoctorsAppointment.Services;
 using Microsoft.AspNetCore.HttpLogging;
 using Serilog;
@@ -16,6 +17,7 @@ builder.Services.AddHttpLogging(options =>
     options.LoggingFields = HttpLoggingFields.All;
 });
 
+builder.Services.AddDoctorAppointmentAuthentication(builder.Configuration);
 builder.Services.AddDoctorsAppointmentDb(builder.Configuration);
 
 // Add services to the container.
@@ -32,6 +34,10 @@ var app = builder.Build();
 
 app.MapGet("/", () => "Doctor's Appointment Scheduling"); 
 app.UseHttpLogging();
+
+app.UseAuthentication();
+app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();
