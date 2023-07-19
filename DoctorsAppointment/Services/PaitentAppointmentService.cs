@@ -20,7 +20,9 @@ namespace DoctorsAppointment.Services
             appointment.PaitentId = Guid.NewGuid();
 
             await _appointmentRepo.Add(appointment);
-            _logger.LogInformation("Appointment created.");
+            _logger.LogInformation(
+                "Appointment has been made with the following details:\n" +
+                appointment);
         }
 
         public async Task<List<string>> CheckAppointment(string requestId)
