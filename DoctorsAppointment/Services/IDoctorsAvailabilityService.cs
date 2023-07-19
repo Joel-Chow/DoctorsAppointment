@@ -7,6 +7,6 @@ namespace DoctorsAppointment.Services
     {
         public Task Create(Slot slot, string doctorId);
 
-        public Task<IEnumerable<object>> CheckAppointment(string doctorId);
+        public Task<IEnumerable<object>> CheckAppointment(string requestId);
     }
 }

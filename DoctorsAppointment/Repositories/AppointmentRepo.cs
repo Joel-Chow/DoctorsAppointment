@@ -20,16 +20,18 @@ namespace DoctorsAppointment.Repositories
             await _database.SaveChangesAsync();
         }
 
-        public async Task<List<string>> Check(PaitentBooking appointment)
+        public async Task<List<string>> Check(string doctorId)
         {
             // returns list of free appointments
-            var freeSlots = await _database.DoctorAvailabilities.Where(x => x.IsReserved == false).ToListAsync();
+            var doctor = await _database.DoctorAvailabilities.Where(x => x.DoctorId == doctorId).ToListAsync();
             List<string> freeDoctor = new List<string>();
             
-            foreach(var freeSlot in freeSlots)
+            foreach(var freeSlot in doctor)
             {
-                var message = "Doctor " + freeSlot.DoctorName.ToString() + " is free at time slot: " + freeSlot.Date.ToString();
-                freeDoctor.Add(message);
+                if (freeSlot.IsReserved == false)
+                {
+                    freeDoctor.Add(freeSlot.Date.ToString());
+                }
             }
 
             return freeDoctor;

@@ -38,14 +38,6 @@ namespace DoctorsAppointment.Controllers
         public async Task<IActionResult> GetAction([FromBody] HttpContext content)
         {
 
-            /*if (!ModelState.IsValid)
-            {
-                var errors = ModelState.Values
-                    .SelectMany(value => value.Errors)
-                    .Select(error => error.ErrorMessage)
-                    .ToList();
-                return BadRequest(errors);
-            }*/
             var requestId = HttpContext.Request.Path;
 
             var message = "Hi Doctor! Here are your free appointments!\n";

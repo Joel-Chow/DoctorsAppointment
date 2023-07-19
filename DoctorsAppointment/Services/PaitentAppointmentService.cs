@@ -20,10 +20,13 @@ namespace DoctorsAppointment.Services
             await _appointmentRepo.Add(appointment);
         }
 
-        public async Task<List<string>> CheckAppointment(PaitentBooking appointment)
+        public async Task<List<string>> CheckAppointment(string requestId)
         {
             // gets list of free appointments
-            return await _appointmentRepo.Check(appointment);
+            // remove strings ahead
+            var doctorId = requestId.Replace("/appointments/", "");
+
+            return await _appointmentRepo.Check(doctorId);
         }
     }
 }

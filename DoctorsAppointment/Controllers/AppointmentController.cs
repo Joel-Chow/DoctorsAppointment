@@ -2,44 +2,49 @@
 using DoctorsAppointment.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace DoctorsAppointment.Controllers;
-
-[Route("/appointments")]
-public class AppointmentController : ControllerBase
+namespace DoctorsAppointment.Controllers
 {
-    
-    private readonly IPaitentAppointmentService _appointmentService;
-    public AppointmentController(IPaitentAppointmentService appointmentService)
+    [Route("/appointments/{doctorId}")]
+    public class AppointmentController : ControllerBase
     {
-        _appointmentService = appointmentService;
-    }
-    
-    public async Task<IActionResult> Post([FromBody] PaitentBooking appointment) 
-    {
-
-        if (!ModelState.IsValid)
+        private readonly IPaitentAppointmentService _appointmentService;
+        public AppointmentController(IPaitentAppointmentService appointmentService)
         {
-            var errors = ModelState.Values
-                .SelectMany(value => value.Errors)
-                .Select(error => error.ErrorMessage)
-                .ToList();
-            return BadRequest(errors);
+            _appointmentService = appointmentService;
         }
 
-        await _appointmentService.CreateAppointment(appointment);
-        return Ok("Appointment Booked!");
-    }
-
-    [Route("/query")]
-    public async Task<IActionResult> GetAction(PaitentBooking appointment)
-    {
-        var message = "Here are the free appointments!\n";
-        var results = await _appointmentService.CheckAppointment(appointment);
-        foreach (var result in results)
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] PaitentBooking appointment, string doctorId)
         {
-            message = message + result + "\n";
+
+            if (!ModelState.IsValid)
+            {
+                var errors = ModelState.Values
+                    .SelectMany(value => value.Errors)
+                    .Select(error => error.ErrorMessage)
+                    .ToList();
+                return BadRequest(errors);
+            }
+
+            var requestId = doctorId;
+
+            await _appointmentService.CreateAppointment(appointment);
+            return Ok("Appointment Booked!");
         }
-        
-        return Ok(message);
+
+        [HttpGet]
+        public async Task<IActionResult> GetAction([FromBody] HttpContext content)
+        {
+            var requestId = HttpContext.Request.Path;
+
+            var message = "Here are the Doctor's free appointments!\n";
+            var results = await _appointmentService.CheckAppointment(requestId);
+            foreach (var result in results)
+            {
+                message = message + result + "\n";
+            }
+
+            return Ok(message);
+        }
     }
 }

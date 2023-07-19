@@ -7,6 +7,6 @@ namespace DoctorsAppointment.Repositories
     {
         public Task Add(PaitentBooking appointment);
 
-        public Task<List<string>> Check(PaitentBooking appointment);
+        public Task<List<string>> Check(string doctorId);
     }
 }
