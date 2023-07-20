@@ -22,7 +22,7 @@ namespace DoctorsAppointment.DoctorsAppointment.Authentication.Controllers
             return Ok("Authentication Module");
         }
 
-        [HttpPost("/login")]
+        [HttpPost]
         public Task<IActionResult> Post([FromBody] LoginRequest request)
         {
             if (request.UserName == "admin")

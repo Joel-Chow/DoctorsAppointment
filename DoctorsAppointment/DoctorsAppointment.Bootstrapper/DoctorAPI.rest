@@ -31,9 +31,11 @@ Content-Type: application/json
 GET {{url}}/appointments/test1
 Content-Type: application/json
 
+###
+GET {{url}}/authentication
 
 ###
-POST {{url}}/login
+POST {{url}}/authentication/login
 Content-Type: application/json
 
 {

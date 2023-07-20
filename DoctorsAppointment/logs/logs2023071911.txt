@@ -1,0 +1,158 @@
+2023-07-19 11:11:04.063 +08:00 [INF] Now listening on: http://localhost:5248
+2023-07-19 11:11:04.095 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-19 11:11:04.097 +08:00 [INF] Hosting environment: Development
+2023-07-19 11:11:04.099 +08:00 [INF] Content root path: C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment
+2023-07-19 11:11:16.774 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5248/appointments/test1 application/json 65
+2023-07-19 11:11:16.878 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: POST
+Scheme: http
+PathBase: 
+Path: /appointments/test1
+Connection: close
+Host: localhost:5248
+User-Agent: vscode-restclient
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+Content-Length: 65
+2023-07-19 11:11:16.881 +08:00 [INF] Executing endpoint 'DoctorsAppointment.Controllers.AppointmentController.Post (DoctorsAppointment)'
+2023-07-19 11:11:16.901 +08:00 [INF] Route matched with {action = "Post", controller = "Appointment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(DoctorsAppointment.Entities.PaitentBooking, System.String) on controller DoctorsAppointment.Controllers.AppointmentController (DoctorsAppointment).
+2023-07-19 11:11:17.188 +08:00 [INF] RequestBody: {
+    "PaitentName":"Test",
+    "Date":"22/02/2023 04:30 pm"
+}
+2023-07-19 11:11:18.176 +08:00 [INF] Executed DbCommand (47ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Doctors_Appointment_Db"."PaitentBooking" ("Id", "Date", "PaitentId", "PaitentName", "SlotId")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-07-19 11:11:18.209 +08:00 [INF] Appointment has been made with the following details:
+DoctorsAppointment.Entities.PaitentBooking
+2023-07-19 11:11:18.218 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-07-19 11:11:18.223 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+2023-07-19 11:11:18.235 +08:00 [INF] Executed action DoctorsAppointment.Controllers.AppointmentController.Post (DoctorsAppointment) in 1329.8073ms
+2023-07-19 11:11:18.239 +08:00 [INF] Executed endpoint 'DoctorsAppointment.Controllers.AppointmentController.Post (DoctorsAppointment)'
+2023-07-19 11:11:18.241 +08:00 [INF] ResponseBody: Appointment Booked!
+2023-07-19 11:11:18.250 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5248/appointments/test1 application/json 65 - 200 - text/plain;+charset=utf-8 1477.5026ms
+2023-07-19 11:18:51.821 +08:00 [INF] Now listening on: http://localhost:5248
+2023-07-19 11:18:51.846 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-19 11:18:51.849 +08:00 [INF] Hosting environment: Development
+2023-07-19 11:18:51.850 +08:00 [INF] Content root path: C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment
+2023-07-19 11:19:03.198 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5248/slots/test1 application/json -
+2023-07-19 11:19:03.279 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /slots/test1
+Connection: close
+Host: localhost:5248
+User-Agent: vscode-restclient
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+2023-07-19 11:19:03.287 +08:00 [INF] Executing endpoint 'DoctorsAppointment.Controllers.DoctorsAvailabilityController.GetAction (DoctorsAppointment)'
+2023-07-19 11:19:03.318 +08:00 [INF] Route matched with {action = "GetAction", controller = "DoctorsAvailability"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAction(Microsoft.AspNetCore.Http.HttpContext) on controller DoctorsAppointment.Controllers.DoctorsAvailabilityController (DoctorsAppointment).
+2023-07-19 11:19:03.492 +08:00 [INF] Request received
+2023-07-19 11:19:04.339 +08:00 [INF] Executed DbCommand (36ms) [Parameters=[@__doctorId_0='?'], CommandType='"Text"', CommandTimeout='30']
+SELECT d."Id", d."Cost", d."Date", d."DoctorId", d."DoctorName", d."IsReserved"
+FROM "Doctors_Appointment_Db"."DoctorAvailabilities" AS d
+WHERE d."DoctorId" = @__doctorId_0
+2023-07-19 11:19:04.448 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-07-19 11:19:04.452 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+2023-07-19 11:19:04.462 +08:00 [INF] Executed action DoctorsAppointment.Controllers.DoctorsAvailabilityController.GetAction (DoctorsAppointment) in 1136.3698ms
+2023-07-19 11:19:04.464 +08:00 [INF] Executed endpoint 'DoctorsAppointment.Controllers.DoctorsAvailabilityController.GetAction (DoctorsAppointment)'
+2023-07-19 11:19:04.467 +08:00 [INF] RequestBody: 
+2023-07-19 11:19:04.470 +08:00 [INF] ResponseBody: Hi Doctor! Here are your free appointments!
+	22/2/2023 6:30:00 am
+	22/2/2023 6:30:00 am
+	22/2/2023 6:30:00 am
+	22/2/2023 6:30:00 am
+	22/2/2023 6:30:00 am
+	22/2/2023 6:30:00 am
+	22/2/2023 6:30:00 am
+
+2023-07-19 11:19:04.481 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5248/slots/test1 application/json - - 200 - text/plain;+charset=utf-8 1284.9650ms
+2023-07-19 11:19:09.923 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5248/appointments/test1 application/json 65
+2023-07-19 11:19:09.925 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: POST
+Scheme: http
+PathBase: 
+Path: /appointments/test1
+Connection: close
+Host: localhost:5248
+User-Agent: vscode-restclient
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+Content-Length: 65
+2023-07-19 11:19:09.926 +08:00 [INF] Executing endpoint 'DoctorsAppointment.Controllers.AppointmentController.Post (DoctorsAppointment)'
+2023-07-19 11:19:09.933 +08:00 [INF] Route matched with {action = "Post", controller = "Appointment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Post(DoctorsAppointment.Entities.PaitentBooking, System.String) on controller DoctorsAppointment.Controllers.AppointmentController (DoctorsAppointment).
+2023-07-19 11:19:09.956 +08:00 [INF] RequestBody: {
+    "PaitentName":"Test",
+    "Date":"22/02/2023 04:30 pm"
+}
+2023-07-19 11:19:10.073 +08:00 [INF] Executed DbCommand (14ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?', @p2='?' (DbType = Guid), @p3='?', @p4='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Doctors_Appointment_Db"."PaitentBooking" ("Id", "Date", "PaitentId", "PaitentName", "SlotId")
+VALUES (@p0, @p1, @p2, @p3, @p4);
+2023-07-19 11:19:10.082 +08:00 [INF] Appointment has been made with the following details:
+	Paitent Name: Test
+	Appointment Time: 22/02/2023 04:30 pm
+	Doctor ID: test1
+
+2023-07-19 11:19:10.084 +08:00 [INF] Executing OkObjectResult, writing value of type 'System.String'.
+2023-07-19 11:19:10.086 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+2023-07-19 11:19:10.087 +08:00 [INF] Executed action DoctorsAppointment.Controllers.AppointmentController.Post (DoctorsAppointment) in 151.599ms
+2023-07-19 11:19:10.088 +08:00 [INF] Executed endpoint 'DoctorsAppointment.Controllers.AppointmentController.Post (DoctorsAppointment)'
+2023-07-19 11:19:10.089 +08:00 [INF] ResponseBody: Appointment Booked!
+2023-07-19 11:19:10.092 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5248/appointments/test1 application/json 65 - 200 - text/plain;+charset=utf-8 169.1017ms
+2023-07-19 11:39:45.639 +08:00 [INF] User profile is available. Using 'C:\Users\chowkh\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-07-19 11:39:45.755 +08:00 [INF] Now listening on: http://localhost:5248
+2023-07-19 11:39:45.758 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-19 11:39:45.759 +08:00 [INF] Hosting environment: Development
+2023-07-19 11:39:45.761 +08:00 [INF] Content root path: C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment
+2023-07-19 11:39:52.131 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5248/slots/test1 application/json 107
+2023-07-19 11:39:52.199 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: POST
+Scheme: http
+PathBase: 
+Path: /slots/test1
+Connection: close
+Host: localhost:5248
+User-Agent: vscode-restclient
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+Content-Length: 107
+2023-07-19 11:39:52.309 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-07-19 11:39:52.315 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-07-19 11:39:52.316 +08:00 [INF] RequestBody: 
+2023-07-19 11:39:52.318 +08:00 [INF] Response:
+StatusCode: 401
+WWW-Authenticate: [Redacted]
+2023-07-19 11:39:52.330 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5248/slots/test1 application/json 107 - 401 0 - 201.8280ms
+2023-07-19 11:39:55.261 +08:00 [INF] Request starting HTTP/1.1 POST http://localhost:5248/slots/test1 application/json 107
+2023-07-19 11:39:55.265 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: POST
+Scheme: http
+PathBase: 
+Path: /slots/test1
+Connection: close
+Host: localhost:5248
+User-Agent: vscode-restclient
+Accept-Encoding: gzip, deflate
+Content-Type: application/json
+Content-Length: 107
+2023-07-19 11:39:55.272 +08:00 [INF] Authorization failed. These requirements were not met:
+DenyAnonymousAuthorizationRequirement: Requires an authenticated user.
+2023-07-19 11:39:55.278 +08:00 [INF] AuthenticationScheme: Bearer was challenged.
+2023-07-19 11:39:55.279 +08:00 [INF] RequestBody: 
+2023-07-19 11:39:55.280 +08:00 [INF] Response:
+StatusCode: 401
+WWW-Authenticate: [Redacted]
+2023-07-19 11:39:55.281 +08:00 [INF] Request finished HTTP/1.1 POST http://localhost:5248/slots/test1 application/json 107 - 401 0 - 19.6366ms

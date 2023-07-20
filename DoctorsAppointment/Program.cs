@@ -1,6 +1,7 @@
 using DoctorsAppointment.Database;
+using DoctorsAppointment.DoctorsAppointment.Authentication;
+using DoctorsAppointment.DoctorsAppointment.Authentication.Security;
 using DoctorsAppointment.Repositories;
-using DoctorsAppointment.Security;
 using DoctorsAppointment.Services;
 using Microsoft.AspNetCore.HttpLogging;
 using Serilog;
@@ -17,11 +18,10 @@ builder.Services.AddHttpLogging(options =>
     options.LoggingFields = HttpLoggingFields.All;
 });
 
-builder.Services.AddDoctorAppointmentAuthentication(builder.Configuration);
-builder.Services.AddDoctorsAppointmentDb(builder.Configuration);
+// add authentication module
+builder.Services.AddAuthenticationModule(builder.Configuration);
 
-builder.Services.Configure<JwtOptions>(builder.Configuration.GetSection(JwtOptions.SectionName));
-builder.Services.AddTransient<JwtCreator>();
+builder.Services.AddDoctorsAppointmentDb(builder.Configuration);
 
 // Add services to the container.
 builder.Services.AddTransient<IDoctorsAvailabilityRepo, DoctorsAvailabilityRepo>();

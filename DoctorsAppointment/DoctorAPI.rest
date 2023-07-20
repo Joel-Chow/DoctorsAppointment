@@ -3,8 +3,7 @@
 ###
 POST {{url}}/slots/test1
 Content-Type: application/json
-Authorization: Bearer
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXciOiJhZG1pbiIsImV4cCI6MTY4OTg0ODkyMCwiaXNzIjoiRG9jdG9yc19BcHBvaW50bWVudCIsImF1ZCI6IkRvY3RvcnNfQXBwb2ludG1lbnQifQ.IumjamxGOyF9n33iH2Y1fq_Ream9-0v9XUuxAofyg20
 {
     "DoctorName":"Test1",
     "Date": "2023-02-22T06:30Z",
@@ -15,7 +14,7 @@ Authorization: Bearer
 ###
 GET {{url}}/slots/test1
 Content-Type: application/json
-
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXciOiJhZG1pbiIsImV4cCI6MTY4OTg0ODkyMCwiaXNzIjoiRG9jdG9yc19BcHBvaW50bWVudCIsImF1ZCI6IkRvY3RvcnNfQXBwb2ludG1lbnQifQ.IumjamxGOyF9n33iH2Y1fq_Ream9-0v9XUuxAofyg20
 
 ###
 POST {{url}}/appointments/test1
@@ -28,10 +27,13 @@ Content-Type: application/json
 
 ###
 GET {{url}}/appointments/test1
-Content-Type: application/
+Content-Type: application/json
 
 ###
-POST {{url}}/login
+GET {{url}}/authenticate
+
+###
+POST {{url}}/authenticate
 Content-Type: application/json
 
 {

@@ -1,0 +1,74 @@
+2023-07-19 16:13:04.969 +08:00 [INF] User profile is available. Using 'C:\Users\chowkh\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-07-19 16:13:05.135 +08:00 [INF] Now listening on: https://localhost:62464
+2023-07-19 16:13:05.139 +08:00 [INF] Now listening on: http://localhost:62465
+2023-07-19 16:13:05.144 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-19 16:13:05.147 +08:00 [INF] Hosting environment: Development
+2023-07-19 16:13:05.148 +08:00 [INF] Content root path: C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment
+2023-07-19 16:13:05.910 +08:00 [INF] Request starting HTTP/2 GET https://localhost:62464/ - -
+2023-07-19 16:13:05.986 +08:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Host: localhost:62464
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.82
+Accept-Encoding: gzip, deflate, br, zsdch
+Accept-Language: en-US,en;q=0.9
+Upgrade-Insecure-Requests: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-user: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-07-19 16:13:06.080 +08:00 [INF] Executing endpoint 'HTTP: GET /'
+2023-07-19 16:13:06.084 +08:00 [INF] Response:
+StatusCode: 200
+Content-Type: text/plain; charset=utf-8
+2023-07-19 16:13:06.096 +08:00 [INF] Executed endpoint 'HTTP: GET /'
+2023-07-19 16:13:06.099 +08:00 [INF] ResponseBody: Doctor's Appointment Scheduling
+2023-07-19 16:13:06.103 +08:00 [INF] Request finished HTTP/2 GET https://localhost:62464/ - - - 200 - text/plain;+charset=utf-8 195.0622ms
+2023-07-19 16:13:06.138 +08:00 [INF] Request starting HTTP/2 GET https://localhost:62464/favicon.ico - -
+2023-07-19 16:13:06.142 +08:00 [INF] Request:
+Protocol: HTTP/2
+Method: GET
+Scheme: https
+PathBase: 
+Path: /favicon.ico
+Accept: image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8
+Host: localhost:62464
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.82
+Accept-Encoding: gzip, deflate, br, zsdch
+Accept-Language: en-US,en;q=0.9
+Referer: [Redacted]
+sec-ch-ua: [Redacted]
+sec-ch-ua-mobile: [Redacted]
+sec-ch-ua-platform: [Redacted]
+sec-fetch-site: [Redacted]
+sec-fetch-mode: [Redacted]
+sec-fetch-dest: [Redacted]
+2023-07-19 16:13:06.147 +08:00 [INF] Response:
+StatusCode: 404
+2023-07-19 16:13:06.149 +08:00 [INF] Request finished HTTP/2 GET https://localhost:62464/favicon.ico - - - 404 0 - 11.2112ms
+2023-07-19 16:14:15.295 +08:00 [INF] User profile is available. Using 'C:\Users\chowkh\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-07-19 16:14:15.416 +08:00 [INF] Now listening on: http://localhost:5248
+2023-07-19 16:14:15.423 +08:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-07-19 16:14:15.427 +08:00 [INF] Hosting environment: Development
+2023-07-19 16:14:15.431 +08:00 [INF] Content root path: C:\Users\chowkh\source\repos\DoctorsAppointment\DoctorsAppointment
+2023-07-19 16:14:30.446 +08:00 [INF] Request starting HTTP/1.1 GET http://localhost:5248/authentication - -
+2023-07-19 16:14:30.564 +08:00 [INF] Request:
+Protocol: HTTP/1.1
+Method: GET
+Scheme: http
+PathBase: 
+Path: /authentication
+Connection: close
+Host: localhost:5248
+User-Agent: vscode-restclient
+Accept-Encoding: gzip, deflate
+2023-07-19 16:14:30.746 +08:00 [INF] Response:
+StatusCode: 404
+2023-07-19 16:14:30.780 +08:00 [INF] Request finished HTTP/1.1 GET http://localhost:5248/authentication - - - 404 0 - 336.5164ms
