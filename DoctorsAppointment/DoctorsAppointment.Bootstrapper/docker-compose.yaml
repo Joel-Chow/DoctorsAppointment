@@ -1,0 +1,11 @@
+services:
+
+  PostgreSQL:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: doctor_db
+    ports:
+      - 5444:5442
